@@ -4,6 +4,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
 WORKDIR /app
 
 COPY requirements.txt .
+ENV PIP_DEFAULT_TIMEOUT=100 PIP_RETRIES=10
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
